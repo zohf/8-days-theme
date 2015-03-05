@@ -15,6 +15,9 @@ $m : '.m-lede';
     right: 0;
     bottom: 0;
   }
+  &.home {
+    background-image: $lede-img;
+  }
   h3 {
     font-size: 22px;
   }
