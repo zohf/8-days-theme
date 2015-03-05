@@ -4,7 +4,7 @@
 
 ## Getting started
 
-To install, simply download this repo as a zip, extract, and place the 8-days-theme folder in your themes directory.
+To install, simply download this repo as a zip, extract, and place the 8-days-theme folder in your themes directory. Login to the Ghost CMS backend at `yoursite.com/ghost` with your email and password, go to settings, and select the 8 Days Theme from the dropdown.
 
 ## Documentation
 
