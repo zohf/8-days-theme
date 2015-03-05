@@ -1,0 +1,121 @@
+$column-margin: 25px !default; //can be overridden locally
+$row-margin: 40px !default;
+
+//columns can be used in any combination adding up to 100%
+
+.m-row {
+  width: 100%;
+  display: block;
+  margin-bottom: $row-margin;
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    clear: both;
+  }
+
+  //75%
+  .m-row__three-quarter {
+    width: calc(75% - (#{$column-margin} / 2));
+    float: left;
+    @media (max-width: $break_medium) {
+      float: none;
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    @media (min-width: $break_medium) {
+      margin-right: $column-margin / 2;
+      &.last {
+        margin-left: $column-margin / 2;
+        margin-right: 0;
+      }
+    }
+  }
+
+  //50%
+  .m-row__half {
+    width: calc(50% - (#{$column-margin} / 2));
+    float: left;
+    @media (max-width: $break_medium) {
+      float: none;
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    @media (min-width: $break_medium) {
+      margin-right: $column-margin / 2;
+      &:last-child,
+      &.last {
+        margin-left: $column-margin / 2;
+        margin-right: 0;
+      }
+    }
+  }
+
+  //33%
+  .m-row__third {
+    width: calc(33.33% - ((#{$column-margin} * 2) / 3));
+    float: left;
+    @media (max-width: $break_medium) {
+      float: none;
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    @media (min-width: $break_medium) {
+      margin-right: $column-margin / 2;
+      margin-left: $column-margin / 2;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child,
+      &.last {
+        margin-right: 0;
+      }
+    }
+  }
+
+  //25%
+  .m-row__quarter {
+    width: calc(25% - ((#{$column-margin} * 3) / 4));
+    float: left;
+    @media (max-width: $break_medium) {
+      float: none;
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    @media (min-width: $break_medium) {
+      margin-right: $column-margin / 2;
+      margin-left: $column-margin / 2;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child,
+      &.last {
+        margin-right: 0;
+      }
+    }
+  }
+
+  //20%
+  .m-row__fifth {
+    width: calc(20% - ((#{$column-margin} * 4) / 5));
+    float: left;
+    @media (max-width: $break_medium) {
+      float: none;
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    @media (min-width: $break_medium) {
+      margin-right: $column-margin / 2;
+      margin-left: $column-margin / 2;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child,
+      &.last {
+        margin-right: 0;
+      }
+    }
+  }
+  
+}

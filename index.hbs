@@ -1,0 +1,41 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<header class="m-lede" style="background-image: url('http://cl.ly/Zti9/cuba.jpg');">
+  <div class="m-lede__inner">
+    <a href="" class="m-lede__logo">8 Days in Cuba</a>
+    <nav></nav>
+    <div class="m-lede__featured">
+      <div class="m-lede__main">
+        {{#foreach posts}}
+          {{#has tag="Feature"}}
+            <h1><a href="{{url}}">{{title}}</a></h1>
+            <h3><span class="m-lede-author">by </span><a href="{{url}}">{{author}}</a>
+          {{/has}}
+        {{/foreach}}
+      </div>
+      <div class="m-lede__5">
+        <ul>
+          <li class="eyebrow">5 Things</li>
+          {{#foreach posts}}
+            {{#has tag="Five Things"}}
+              <li><a href="{{url}}">{{title}}</a></li>
+            {{/has}}
+          {{/foreach}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main section="m-body">
+</main>
+
+<footer>
+</footer>
+<main id="content" class="content homepage" role="main">
+
+  {{! The tag below includes the post loop - partials/loop.hbs }}
+  {{> "loop"}}
+
+</main>

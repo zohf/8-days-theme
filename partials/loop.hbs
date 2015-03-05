@@ -1,0 +1,50 @@
+<main class="m-loop">
+    <h2 class="m-blog-head"><a href="/tag/blog/">Blogs</a></h2>
+    <div class="m-row">
+    {{#foreach posts}}
+        {{#has tag="Blog"}}
+        <div class="m-row__third">
+            <article class="{{post_class}} blog">
+                <header class="m-blog-post-head">
+                    <div class="m-blog-post-image"
+                         style="background:{{#if image}}url({{image}}){{else}}#ccc{{/if}};background-size:cover;">
+                    </div>
+                </header>
+                <div class="m-blog-post-content">
+                    <h2 class="m-blog-post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                    <footer class="post-meta">
+                        by&nbsp;<span class="m-gallery-post-author">{{author}}</span>
+                    </footer>
+                </div>
+            </article>
+        </div>
+        {{/has}}
+    {{/foreach}}
+    </div>
+
+    <h2 class="m-gallery-head"><a href="/tag/gallery/">Galleries</a></h2>
+    <div class="m-row">
+    {{#foreach posts}}
+        {{#has tag="Gallery"}}
+        <div class="m-row__quarter">
+            <article class="{{post_class}} gallery">
+                <header class="m-gallery-post-head">
+                    <div class="m-gallery-post-image"
+                         style="background:{{#if image}}url({{image}}){{else}}#ccc{{/if}};background-size:cover;">
+                    </div>
+                </header>
+                <div class="m-gallery-post-content">
+                    <h2 class="m-gallery-post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                    <footer class="post-meta">
+                        by&nbsp;<span class="m-gallery-post-author">{{author}}</span>
+                    </footer>
+                </div>
+            </article>
+        </div>
+        {{/has}}
+    {{/foreach}}
+    </div>
+
+    {{! Previous/next page links - displayed on every page }}
+    {{pagination}}
+</main>

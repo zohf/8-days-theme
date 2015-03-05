@@ -1,0 +1,22 @@
+$m : '.m-loop';
+
+#{$m} {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 15px;
+  @media (max-width: $break_large) {
+
+  }
+  .m-blog-post-content,
+  .m-gallery-post-content {
+    margin-top: 10px;
+  }
+}
+
+.pagination{
+	color: #A5A5A5;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 12px;
+}

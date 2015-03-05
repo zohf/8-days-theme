@@ -1,0 +1,120 @@
+$m : '.m-lede';
+
+#{$m} {
+  @include background-size (cover);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  margin-bottom: 40px;
+  &:before {
+    content: "";
+    @include background-image(linear-gradient(rgba($secondary, 0.2), rgba($secondary, 0.65)));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  #{$m}-author {
+    font-weight: normal;
+    color: white;
+  }
+  #{$m}__inner {
+    max-width: $max-width;
+    min-height: 650px;
+    position: relative;
+    margin: 0 auto;
+    @media (max-width: $break_medium) {
+      min-height: 400px;
+      padding: 275px 15px 15px;
+    }
+  }
+  #{$m}__featured {
+    position: absolute;
+    width: 100%;
+    bottom: 75px;
+    left: 0px;
+    right: 0px;
+    @media (max-width: $break_medium) {
+      position: relative;
+      left: auto;
+      right: auto;
+      bottom: auto;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  #{$m}__main,
+  #{$m}__5 {
+    position: absolute;
+    bottom: 0;
+    @media (max-width: $break_medium) {
+      width: 100%;
+      margin: 0 0 35px 0;
+      position: relative;
+    }
+  }
+  #{$m}__main {
+    @media (min-width: $break_medium) {
+      width: calc(57% - 15px);
+      left: 15px;
+    }
+  }
+  #{$m}__5 {
+    color: white;
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    li {
+      list-style-type: none;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      &.eyebrow {
+        background: white;
+        color: $secondary;
+        padding: 2px 4px;
+        margin-bottom: 10px;
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+      @media (min-width: $break_medium) {
+        font-size: 21px;
+      }
+    }
+    @media (min-width: $break_medium) {
+      width: calc(37% - 15px);
+      right: 15px;
+    }
+  }
+  #{$m}__logo {
+    @include transition (all ease-in-out 0.3s);
+    background: $logo;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    display: block;
+    width: 160px;
+    height: 100px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    &:hover {
+      opacity: 0.75;
+    }
+    @media (max-width: $break_medium) {
+      width: 120px;
+      height: 80px;
+    }
+  }
+}

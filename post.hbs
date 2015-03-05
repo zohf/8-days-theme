@@ -1,0 +1,53 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<header class="m-post-main-header m-post-head">
+    <nav class="m-post-main-nav clearfix">
+        <a class="m-post-nav-button" href="{{@blog.url}}">Home</a>
+    </nav>
+</header>
+
+<main class="m-post" role="main">
+
+    <article class="m-post-article {{post_class}}">
+
+        <header class="m-post-header">
+            <ul class="m-post-tags">
+                <li class="m-post-tag">{{tags separator='</li><li class="m-post-tag">'}}</li>
+            </ul>
+            <h1 class="m-post-title">{{title}}</h1>
+            <h4 class="m-post-author">by&nbsp;<a href="{{author.url}}">{{author.name}}</a></h4>
+            <section class="m-post-meta">
+                <time class="m-post-date" datetime="{{date format='YYYY-MM-DD'}}">Posted:&nbsp;{{date format="DD MMMM YYYY"}}</time>
+            </section>
+        </header>
+
+        <section class="m-post-content">
+            {{content}}
+        </section>
+
+        <footer class="m-post-footer">
+            <section class="m-post-share">
+                <h4>Share this post</h4>
+                <a class="m-post-icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="m-post-icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+            </section>
+
+        </footer>
+
+    </article>
+
+</main>
+
+{{/post}}
