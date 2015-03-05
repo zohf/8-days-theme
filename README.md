@@ -6,6 +6,10 @@
 
 To install, simply download this repo as a zip, extract, and place the 8-days-theme folder in your themes directory. Login to the Ghost CMS backend at `yoursite.com/ghost` with your email and password, go to settings, and select the 8 Days Theme from the dropdown.
 
+## Usage
+
+By default, 8 Days homepage populates via Ghost article tags. It loops through all posts, adding those with the "Blog" and "Gallery" tags to their requisite sections. To add another section based on tags in `loop.hbs`, wrap the code block in a `{{#foreach posts}}` loop and check `{{#has tag="newTag"}}`. You can then access direct properties for each post (e.g. {{post_class}}).
+
 ## Documentation
 
 If you are new to the Ghost CMS, you can learn more about it here: [https://github.com/tryghost/Ghost](https://github.com/tryghost/Ghost)
