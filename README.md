@@ -10,6 +10,14 @@ To install, simply download this repo as a zip, extract, and place the 8-days-th
 
 If you are new to the Ghost CMS, you can learn more about it here: [https://github.com/tryghost/Ghost](https://github.com/tryghost/Ghost)
 
+Note: the Ghost CMS currently requires standard CSS and does not natively support preprocessors. You'll see an included Sass directory within the assets directory. We used [Compass](http://compass-style.org/) during development. 
+
+Compass runs on any computer that has Ruby installed. If you don't have Ruby installed, you can follow those steps [here](http://www.ruby-lang.org/en/downloads/).
+
+To install Compass type `$ gem install compass` in your terminal window.
+
+Since our project is already setup, navigate to the `assets` diretory and type `$ compass watch`. Now any changes you make in the Sass directory will be compiled and refelcted in the stylesheets directory. Top stop Compass from watching, type `$ ctrl + c`.
+
 ## Authors
 
 [Josh Laincz](https://github.com/zohf), [Aidan Feay](https://github.com/alfeay)
